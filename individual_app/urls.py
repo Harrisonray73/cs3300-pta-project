@@ -1,8 +1,9 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-# Create your views here.
-def index(request):
+from django.urls import path
+from . import views
 
-# Render the HTML template index.html with the data in the context variable.
-   return HttpResponse('individual_app/index.html')
-
+urlpattern =[
+    # difines the url pattern '' is empty represents
+    # the path to app views, index is the function 
+    # defined in view.py name='index' is dynamic.
+    path('', views.index, name='index'),
+]
