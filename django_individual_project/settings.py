@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'individual_project',
+    # Adding the name of my application here
+    'individual_app',
 ]
 
 # Add support for authenticating users
