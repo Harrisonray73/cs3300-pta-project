@@ -4,5 +4,5 @@ from django.http import HttpResponse
 def index(request):
 
 # Render the HTML template index.html with the data in the context variable.
-   return HttpResponse('home page')
+   return HttpResponse('individual_app/index.html')
 
