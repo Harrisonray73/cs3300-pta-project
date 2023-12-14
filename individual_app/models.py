@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 class Position(models.Model):
@@ -7,6 +8,11 @@ class Position(models.Model):
     about = models.TextField(blank = True)
     contact_email = models.CharField(max_length=200, blank = True)
 
+    def __str__(self):
+        return self.title
+    
+    def get_absolute_url(position):
+        return reverse('position-detail', args=[str(position.id)])
 
 class Member(models.Model):
 
@@ -23,3 +29,10 @@ class Member(models.Model):
     email = models.CharField("USER Email", max_length=200)
     title = models.CharField(max_length=200, choices=TITLE, blank = False)
     position = models.OneToOneField(Position, on_delete=models.CASCADE, unique=True)
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('member-detail', args=[str(self.id)])
+    
