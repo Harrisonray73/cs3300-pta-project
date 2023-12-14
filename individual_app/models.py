@@ -14,4 +14,4 @@ class Member(models.Model):
 
     name = models.CharField(max_length=200)
     email = models.CharField("USER Email", max_length=200)
-    title = models.CharField(max_length=200, choices=TITLE, blank = True)
+    title = models.CharField(max_length=200, choices=TITLE, blank = False)
