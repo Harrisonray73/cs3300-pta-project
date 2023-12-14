@@ -1,0 +1,20 @@
+<!-- inherit from base.html-->
+{% extends "individual_app/base_template.html" %}
+
+
+{% block content %}
+<h1>User List</h1>
+{% if member_list %}
+<ul>
+{% for member in member_list %}
+<li>
+<a href="{{ member.get_absolute_url }}">{{ student.name }}</a>
+</li>
+{% endfor %}
+</ul>
+{% else %}
+<p>There are no members registered</p>
+{% endif %}
+
+
+{% endblock %}

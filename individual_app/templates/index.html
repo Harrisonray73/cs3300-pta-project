@@ -1,10 +1,18 @@
 <!-- inherit from base.html-->
-{% extends "individual_app/member_template.html" %}
+{% extends "individual_app/base_template.html" %}
 
 <!-- Replace block content in base_template.html -->
 {% block content %}
-<h1>PTA Users</h1>
+<h1>PTA Members</h1>
 
-<h2>More to come</h2>
+<h2>List of PTA Users with accounts</h2>
+<ul class="list-group">
+{% for i in member_active_accounts %}
+<li class="list-group-item">Name: {{i.name}}
+<p><strong>Member:{{ i.member.title}}
+<a class="btn btn-primary" href="{{ i.member.get_absolute_url }}" role="button">View</a>
+</li>
+{% enfor %}
+</ul>
 
 {% endblock %}
