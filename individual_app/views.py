@@ -6,7 +6,7 @@ from .models import Member, Position
 def index(request):
 
     # Your view logic here
-   member_active_accounts = Member.objects.select_related('member').all().filter(individual__is_active=True)
+   member_active_accounts = Member.objects.select_related('member').all().filter(member__is_active=True)
    print("active individual query set", member_active_accounts)
    return render(request, 'individual_app/index.html', {'member_active_accounts':member_active_accounts})
 # Render index.html
